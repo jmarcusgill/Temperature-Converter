@@ -8,14 +8,14 @@
   <h1>Marcus' Temperature Converter</h1>
 
   <input type="text" name="temp" placeholder="What's the temp?" id="user_input"> <br>
-  <input type="radio" name="celsius">F -> C<br>
-  <input type="radio" name="fahrenheit"> C -> F
+  <input type="radio" name="celsius" id="toC">F -> C<br>
+  <input type="radio" name="fahrenheit" id="toF"> C -> F
 
   <br>
   <button type="submit" id="converter">CONVERT!</button>
-  <button type="submit">CLEAR!</button>
+  <button type="submit" id="clear">CLEAR!</button>
 
-  <div class="output">
+  <div id="output">
     <h2>Your converted temperature:</h2>
 
   </div>
