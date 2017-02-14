@@ -25,15 +25,28 @@ function toFahrenheit (todaysTemp) {
 
 // This function should determine which conversion should
 // happen based on which radio button is selected.
+
+// If the temperature is greater than 90F/32C the color of the converted temperature should be red.
+//If the temperature is less than 32F/0C the color of the converted temperature should be blue.
+//For any other temperature, the color should be green.
+
+
 function determineConverter (clickEvent) {
   // console.log("event", clickEvent);
   if (toC.checked) {
-    console.log(toCelsius(todaysTemp));
+    output.innerHTML += toCelsius(todaysTemp);
   } else if (toF.checked) {
-    console.log(toFahrenheit(todaysTemp));
+    output.innerHTML += toFahrenheit(todaysTemp);
   } else {
     console.log("punch a button")
   }
+}
+
+function clearValue() {
+  todaysTemp.value = "";
+  output.innerHTML = "";
+  toC.checked = toC.unchecked
+  toF.checked = toF.unchecked
 }
 
 window.addEventListener("keypress", checkEnter)
@@ -45,3 +58,4 @@ function checkEnter (e) {
 
 // Assign a function to be executed when the button is clicked
 button.addEventListener("click", determineConverter);
+clear.addEventListener("click", clearValue);
